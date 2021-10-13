@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 
-export const PlanetCard = ({ match }) => {
+export const PlanetCard = () => {
 	const [listOfPlanets, setListOfPlanets] = React.useState([]);
 
 	React.useEffect(() => {
@@ -17,31 +17,33 @@ export const PlanetCard = ({ match }) => {
 			.then(data => setListOfPlanets(data.results));
 	}, []);
 
-	console.log(listOfPlanets[3]);
-
 	return (
 		<>
-			<div className="planets d-flex">
+			<div className="row planets">
 				{listOfPlanets.map((planet, index) => {
-					console.log(planet);
-					console.log(index);
 					return (
-						<div className="card m-3 w-25" key={index}>
-							<img
-								className="card-img-top"
-								src="https://static.wikia.nocookie.net/starwars/images/c/cc/Star-wars-logo-new-tall.jpg"
-							/>
-							<div className="card-body">
-								<h5 className="card-title">{planet.name}</h5>
-								<p className="card-text">Terrain: {planet.terrain}</p>
-								<p className="card-text">Climate: {planet.climate}</p>
-								<p className="card-text">Population: {planet.population}</p>
-								<Link
-									to={`/planet_details/${index + 1}`}
-									className="btn btn-primary"
-									onClick={() => console.log(match)}>
-									More details
-								</Link>
+						<div className="col-md-4" key={index}>
+							<div className=" card mb-4 box-shadow">
+								<img
+									className="card-img-top"
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSquUoilY01uGHYZ7mRlJRqhcRQ5qJVOnIM0A&usqp=CAU"
+									style={planetCardStyles}
+								/>
+								<div className="card-body">
+									<h5 className="card-title">{planet.name}</h5>
+									<p className="card-text">Terrain: {planet.terrain}</p>
+									<p className="card-text">Climate: {planet.climate}</p>
+									<p className="card-text">Population: {planet.population}</p>
+									<div className="d-flex justify-content-between align-items-center">
+										<div className="btn-group">
+											<Link to={`/planet_details/${index + 1}`}>
+												<button type="button" className="btn btn-sm btn-outline-secondary">
+													More details
+												</button>
+											</Link>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					);
@@ -49,4 +51,10 @@ export const PlanetCard = ({ match }) => {
 			</div>
 		</>
 	);
+};
+
+const planetCardStyles = {
+	height: "225px",
+	width: "100%",
+	display: "block"
 };
