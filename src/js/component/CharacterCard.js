@@ -1,25 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { Context } from "../store/appContext";
 
 export const CharacterCard = () => {
-	//const [newCard, setNewCard] = React.useState("");
-	const [characters, setCharacters] = React.useState([]);
+	const { store, actions } = useContext(Context);
+	//const [characters, setCharacters] = React.useState([]);
 
-	React.useEffect(() => {
-		console.log("useEffect on Characters called!");
-		fetch("https://swapi.dev/api/people")
-			.then(response => {
-				if (!response.ok) {
-					throw new Error(response.statusText);
-				}
-				console.log("fetching characters");
-				return response.json();
-			})
-			.then(data => setCharacters(data.results));
-	}, []);
+	// React.useEffect(() => {
+	// 	console.log("useEffect on Characters called!");
+	// 	fetch("https://swapi.dev/api/people")
+	// 		.then(response => {
+	// 			if (!response.ok) {
+	// 				throw new Error(response.statusText);
+	// 			}
+	// 			console.log("fetching characters");
+	// 			return response.json();
+	// 		})
+	// 		.then(data => setCharacters(data.results));
+	// }, []);
 	return (
 		<>
 			<div className="row planets">
-				{characters.map((character, index) => {
+				{store.characterList.map((character, index) => {
 					return (
 						<div className="col-md-4" key={index}>
 							<div className=" card mb-4 box-shadow">
@@ -30,9 +31,9 @@ export const CharacterCard = () => {
 								/>
 								<div className="card-body">
 									<h5 className="card-title">{character.name}</h5>
-									<p className="card-text">Gender: {character.gender}</p>
-									<p className="card-text">DOB: {character.birth_year}</p>
-									<p className="card-text">Height: {character.height}</p>
+									<p className="card-text">Gender:</p>
+									<p className="card-text">DOB:</p>
+									<p className="card-text">Height: </p>
 									<div className="d-flex justify-content-between align-items-center">
 										<div className="btn-group">
 											<button type="button" className="btn btn-sm btn-outline-secondary">

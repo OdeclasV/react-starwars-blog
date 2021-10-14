@@ -5,7 +5,11 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<img
+					className="navbar-brand m-1"
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSquUoilY01uGHYZ7mRlJRqhcRQ5qJVOnIM0A&usqp=CAU"
+					style={{ width: "80px" }}
+				/>
 			</Link>
 			<div className="ml-auto">
 				<Link to="/demo">

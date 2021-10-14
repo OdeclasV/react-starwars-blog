@@ -1,26 +1,28 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Route, Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const PlanetCard = () => {
-	const [listOfPlanets, setListOfPlanets] = React.useState([]);
+	const { store, actions } = useContext(Context);
+	//const [listOfPlanets, setListOfPlanets] = React.useState([]);
 
-	React.useEffect(() => {
-		console.log("useEffect on Planets called!");
-		fetch("https://swapi.dev/api/planets")
-			.then(response => {
-				if (!response.ok) {
-					throw new Error(response.statusText);
-				}
-				console.log("fetching planets");
-				return response.json();
-			})
-			.then(data => setListOfPlanets(data.results));
-	}, []);
+	// React.useEffect(() => {
+	// 	console.log("useEffect on Planets called!");
+	// 	fetch("https://swapi.dev/api/planets")
+	// 		.then(response => {
+	// 			if (!response.ok) {
+	// 				throw new Error(response.statusText);
+	// 			}
+	// 			console.log("fetching planets");
+	// 			return response.json();
+	// 		})
+	// 		.then(data => setListOfPlanets(data.results));
+	// }, []);
 
 	return (
 		<>
 			<div className="row planets">
-				{listOfPlanets.map((planet, index) => {
+				{store.planetList.map((planet, index) => {
 					return (
 						<div className="col-md-4" key={index}>
 							<div className=" card mb-4 box-shadow">
