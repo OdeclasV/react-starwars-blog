@@ -23,10 +23,15 @@ export const PlanetCard = () => {
 									<p className="card-text">Climate: {planet.climate}</p>
 									<p className="card-text">Population: {planet.population}</p>
 									<div className="d-flex justify-content-between align-items-center">
-										<div className="btn-group">
-											<Link to={`/planet_details/${index + 1}`}>
+										<div className="btn-group m-2">
+											<Link to={`/details/planet/${index + 1}`} className="m-1">
 												<button type="button" className="btn btn-sm btn-outline-secondary">
 													More details
+												</button>
+											</Link>
+											<Link to={`/details/planet/${index + 1}`} className="m-1">
+												<button type="button" className="btn btn-sm btn-outline-warning">
+													<i className="far fa-heart" />
 												</button>
 											</Link>
 										</div>

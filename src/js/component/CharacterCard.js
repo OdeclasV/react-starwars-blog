@@ -24,9 +24,14 @@ export const CharacterCard = () => {
 									<p className="card-text">Height: </p>
 									<div className="d-flex justify-content-between align-items-center">
 										<div className="btn-group">
-											<Link to={`/character_details/${index + 1}`}>
+											<Link to={`/details/character/${index + 1}`} className="m-1">
 												<button type="button" className="btn btn-sm btn-outline-secondary">
 													More details
+												</button>
+											</Link>
+											<Link to={`/details/character/${index + 1}`} className="m-1">
+												<button type="button" className="btn btn-sm btn-outline-warning">
+													<i className="far fa-heart" />
 												</button>
 											</Link>
 										</div>

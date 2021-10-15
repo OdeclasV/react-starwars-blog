@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 export const PlanetDetails = () => {
 	const { store, actions } = useContext(Context);
 	const [planet, setPlanet] = React.useState({});
-	const { id } = useParams();
+	const { id, type } = useParams();
 
 	// go to to store
 	// filter array to find id (to store.planetList)
@@ -19,7 +19,7 @@ export const PlanetDetails = () => {
 		});
 	}, []);
 
-	//console.log(planet);
+	console.log(type);
 
 	return (
 		<>
