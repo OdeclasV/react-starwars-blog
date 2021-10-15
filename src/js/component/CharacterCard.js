@@ -1,22 +1,10 @@
 import React, { useEffect, useContext } from "react";
+import { Route, Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const CharacterCard = () => {
 	const { store, actions } = useContext(Context);
-	//const [characters, setCharacters] = React.useState([]);
 
-	// React.useEffect(() => {
-	// 	console.log("useEffect on Characters called!");
-	// 	fetch("https://swapi.dev/api/people")
-	// 		.then(response => {
-	// 			if (!response.ok) {
-	// 				throw new Error(response.statusText);
-	// 			}
-	// 			console.log("fetching characters");
-	// 			return response.json();
-	// 		})
-	// 		.then(data => setCharacters(data.results));
-	// }, []);
 	return (
 		<>
 			<div className="row planets">
@@ -36,9 +24,11 @@ export const CharacterCard = () => {
 									<p className="card-text">Height: </p>
 									<div className="d-flex justify-content-between align-items-center">
 										<div className="btn-group">
-											<button type="button" className="btn btn-sm btn-outline-secondary">
-												More details
-											</button>
+											<Link to={`/character_details/${index + 1}`}>
+												<button type="button" className="btn btn-sm btn-outline-secondary">
+													More details
+												</button>
+											</Link>
 										</div>
 									</div>
 								</div>

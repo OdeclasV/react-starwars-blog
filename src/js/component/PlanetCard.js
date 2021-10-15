@@ -4,20 +4,6 @@ import { Context } from "../store/appContext";
 
 export const PlanetCard = () => {
 	const { store, actions } = useContext(Context);
-	//const [listOfPlanets, setListOfPlanets] = React.useState([]);
-
-	// React.useEffect(() => {
-	// 	console.log("useEffect on Planets called!");
-	// 	fetch("https://swapi.dev/api/planets")
-	// 		.then(response => {
-	// 			if (!response.ok) {
-	// 				throw new Error(response.statusText);
-	// 			}
-	// 			console.log("fetching planets");
-	// 			return response.json();
-	// 		})
-	// 		.then(data => setListOfPlanets(data.results));
-	// }, []);
 
 	return (
 		<>
@@ -28,7 +14,7 @@ export const PlanetCard = () => {
 							<div className=" card mb-4 box-shadow">
 								<img
 									className="card-img-top"
-									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSquUoilY01uGHYZ7mRlJRqhcRQ5qJVOnIM0A&usqp=CAU"
+									src="https://1000logos.net/wp-content/uploads/2017/06/StarWars-Logo-1977.jpg"
 									style={planetCardStyles}
 								/>
 								<div className="card-body">

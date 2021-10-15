@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import { PlanetDetails } from "./views/PlanetDetails";
+import { CharacterDetails } from "./views/CharacterDetails";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -32,6 +33,9 @@ const Layout = () => {
 						<Route exact path="/planet_details/:id">
 							<PlanetDetails />
 						</Route>
+						<Route exact path="/character_details/:id">
+							<CharacterDetails />
+						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
@@ -47,3 +51,5 @@ const Layout = () => {
 };
 
 export default injectContext(Layout);
+
+//<Route exact path="/:type/:id">

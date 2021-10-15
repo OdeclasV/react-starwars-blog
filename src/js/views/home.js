@@ -6,9 +6,9 @@ import { PlanetCard } from "../component/PlanetCard";
 export const Home = () => (
 	<>
 		<div className="container">
-			<h2>Characters</h2>
+			<h2 className="main-title">Characters</h2>
 			<CharacterCard />
-			<h2>Planets</h2>
+			<h2 className="main-title">Planets</h2>
 			<PlanetCard />
 		</div>
 	</>

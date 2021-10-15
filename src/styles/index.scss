@@ -2,6 +2,18 @@
     General Styles
 */
 
+body {
+    background: #393b3a;
+    color: white;
+}
+
+.card-body {
+    color: black;
+}
+.main-title {
+    color: white;
+}
+
 .planets {
     flex-wrap: nowrap;
     overflow-x: scroll;

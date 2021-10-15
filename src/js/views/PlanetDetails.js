@@ -11,7 +11,7 @@ export const PlanetDetails = () => {
 	// filter array to find id (to store.planetList)
 	// save it in local hook to update state (useState)
 
-	React.useEffect(() => {
+	useEffect(() => {
 		store.planetList.map((myPlanet, index) => {
 			if (index + 1 == id) {
 				setPlanet(myPlanet);
@@ -19,7 +19,7 @@ export const PlanetDetails = () => {
 		});
 	}, []);
 
-	console.log(planet);
+	//console.log(planet);
 
 	return (
 		<>
