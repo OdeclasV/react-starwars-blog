@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characterList: [],
-			planetList: []
+			planetList: [],
+			favoritesList: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -34,12 +35,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return response.json();
 					})
 					.then(data => setStore({ characterList: data.results }));
-			}
+			},
 
-			//reset the global store
-			// setStore({ demo: demo });
+			showFavorite: nameOfFavorite => {
+				let { favoritesList } = getStore();
+				favoritesList.includes(nameOfFavorite) ? favoritesList : favoritesList.push(nameOfFavorite);
+				setStore({ favoritesList: favoritesList });
+			},
+
+			deleteFavorite: favoriteToDelete => {
+				let newFavorites = getStore().favoritesList.filter(favorite => {
+					return favorite !== favoriteToDelete;
+				});
+				setStore({ favoritesList: newFavorites });
+			}
 		}
 	};
 };
 
 export default getState;
+
+// login log out button
+// when page loads, see login button
+//

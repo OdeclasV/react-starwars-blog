@@ -29,11 +29,13 @@ export const PlanetCard = () => {
 													More details
 												</button>
 											</Link>
-											<Link to={`/details/planet/${index + 1}`} className="m-1">
-												<button type="button" className="btn btn-sm btn-outline-warning">
-													<i className="far fa-heart" />
-												</button>
-											</Link>
+											<button
+												type="button"
+												className="btn btn-sm btn-outline-warning"
+												style={{ marginLeft: "20px" }}
+												onClick={() => actions.showFavorite(planet.name)}>
+												<i className="far fa-heart" />
+											</button>
 										</div>
 									</div>
 								</div>
@@ -51,3 +53,6 @@ const planetCardStyles = {
 	width: "100%",
 	display: "block"
 };
+
+// run a find for what you're trying to add
+// if it exists, run a delete

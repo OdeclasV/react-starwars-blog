@@ -10,6 +10,10 @@ body {
 .card-body {
     color: black;
 }
+
+.favorite {
+    margin-left: 20px;
+}
 .main-title {
     color: white;
 }
@@ -25,4 +29,12 @@ body {
 
 .featurette {
     justify-content: center;
+}
+
+.dropdown {
+    margin-right: 200px;
+}
+
+.dropdown-menu {
+    min-width: 12rem;;
 }

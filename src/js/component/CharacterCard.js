@@ -19,9 +19,9 @@ export const CharacterCard = () => {
 								/>
 								<div className="card-body">
 									<h5 className="card-title">{character.name}</h5>
-									<p className="card-text">Gender:</p>
-									<p className="card-text">DOB:</p>
-									<p className="card-text">Height: </p>
+									<p className="card-text">Gender: {character.gender}</p>
+									<p className="card-text">DOB: {character.birth_year}</p>
+									<p className="card-text">Height: {character.height}</p>
 									<div className="d-flex justify-content-between align-items-center">
 										<div className="btn-group">
 											<Link to={`/details/character/${index + 1}`} className="m-1">
@@ -29,11 +29,13 @@ export const CharacterCard = () => {
 													More details
 												</button>
 											</Link>
-											<Link to={`/details/character/${index + 1}`} className="m-1">
-												<button type="button" className="btn btn-sm btn-outline-warning">
-													<i className="far fa-heart" />
-												</button>
-											</Link>
+											<button
+												type="button"
+												className="btn btn-sm btn-outline-warning"
+												style={{ marginLeft: "20px" }}
+												onClick={() => actions.showFavorite(character.name)}>
+												<i className="far fa-heart" />
+											</button>
 										</div>
 									</div>
 								</div>
